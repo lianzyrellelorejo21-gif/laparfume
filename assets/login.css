@@ -1,0 +1,275 @@
+/* LaParfume - Authentication Pages Stylesheet */ 
+
+/* ==================== GLOBAL STYLES ==================== */ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: #000; 
+    color: #fff; 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    overflow-x: hidden; 
+} 
+
+/* --- FIX: Global Override for Bootstrap's Muted Text --- */
+.text-muted {
+    color: #cfcfcf !important; /* Lighter gray for better visibility */
+}
+
+/* ==================== NAVBAR & BANNER ==================== */ 
+.top-banner { 
+    background-color: #000; 
+    color: #fff; 
+    text-align: center; 
+    padding: 12px 0; 
+    font-size: 14px; 
+    border-bottom: 1px solid #333; 
+    position: relative; 
+    z-index: 20; /* Keep above blobs */
+} 
+.top-banner a { color: #1dd1a1; text-decoration: none; font-weight: 600; } 
+
+.navbar { 
+    background-color: #000 !important; 
+    border-bottom: 1px solid #333; 
+    padding: 1rem 0; 
+    position: relative; 
+    z-index: 20; /* Keep above blobs */
+} 
+.navbar-brand { font-size: 28px; font-weight: 700; color: #fff !important; } 
+.navbar-nav .nav-link { color: #fff !important; margin: 0 20px; font-weight: 500; } 
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: #1dd1a1 !important; } 
+
+/* ==================== SEARCH BAR (NEW) ==================== */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    background-color: #161616;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 8px 40px 8px 15px; /* Right padding for icon space */
+    border-radius: 50px; /* Pill shape */
+    width: 260px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #1dd1a1;
+    box-shadow: 0 0 0 2px rgba(29, 209, 161, 0.1);
+    background-color: #000;
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.search-input:focus + .search-btn {
+    color: #1dd1a1;
+}
+
+/* Mobile Search Icon */
+.mobile-search-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* Icons */
+.nav-icons { display: flex; align-items: center; gap: 15px; }
+.icon-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+.icon-btn:hover { color: #1dd1a1; }
+
+/* ==================== LOGIN & ANIMATION (NEW) ==================== */ 
+
+/* Floating Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Background Blobs */
+.glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.35;
+}
+.blob-1 { top: 15%; left: 15%; width: 300px; height: 300px; background: #1dd1a1; }
+.blob-2 { bottom: 15%; right: 15%; width: 400px; height: 400px; background: #8e44ad; opacity: 0.15; }
+
+.login-section, .signup-section { 
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 60px 15px; 
+    position: relative;
+    z-index: 10;
+} 
+
+.login-card, .signup-card { 
+    background-color: rgba(22, 22, 22, 0.95); /* Slight transparency for float effect */
+    backdrop-filter: blur(10px);
+    border-radius: 12px; 
+    padding: 50px; 
+    width: 100%; 
+    max-width: 500px; 
+    
+    /* New Floating Shadow and Animation */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px #222; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: float 6s ease-in-out infinite;
+} 
+
+.signup-card { max-width: 600px; } 
+
+.login-card h1, .signup-card h1 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 10px; color: #fff; } 
+.login-subtitle, .signup-subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 14px; } 
+
+/* ==================== FORM ELEMENTS ==================== */ 
+.form-control,  
+.form-select { 
+    background-color: transparent !important; 
+    border: none; 
+    border-bottom: 1px solid #555; 
+    border-radius: 0; 
+    color: #fff; 
+    padding: 15px 0; 
+    transition: all 0.3s; 
+    font-family: 'Poppins', sans-serif; 
+    box-shadow: none; 
+} 
+
+.form-control:focus,  
+.form-select:focus { 
+    background-color: transparent !important; 
+    border-bottom-color: #1dd1a1; 
+    color: #fff; 
+    box-shadow: none; 
+    outline: none; 
+} 
+
+.form-control::placeholder { 
+    color: #666; 
+    font-weight: 300; 
+} 
+
+textarea.form-control { 
+    border: 1px solid #555; 
+    border-radius: 4px; 
+    padding: 10px; 
+} 
+
+/* ==================== BUTTONS ==================== */ 
+.btn-login, 
+.btn-signup { 
+    background-color: #1dd1a1; 
+    color: #000; 
+    border: none; 
+    padding: 15px; 
+    border-radius: 6px; 
+    font-size: 16px; 
+    font-weight: 600; 
+    width: 100%; 
+    transition: all 0.3s; 
+    margin-top: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    /* Add slight glow to button */
+    box-shadow: 0 4px 15px rgba(29, 209, 161, 0.2);
+} 
+
+.btn-login:hover, 
+.btn-signup:hover { 
+    background-color: #1abc9c; 
+    transform: translateY(-2px); 
+    color: #000; 
+    box-shadow: 0 6px 20px rgba(29, 209, 161, 0.3);
+} 
+
+/* ==================== UTILITIES ==================== */ 
+.password-wrapper { position: relative; } 
+.password-toggle { 
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: none; 
+    border: none; 
+    color: #666; 
+    cursor: pointer; 
+    padding: 5px; 
+} 
+.password-toggle:hover { color: #1dd1a1; } 
+
+.forgot-link { color: #1dd1a1; text-decoration: none; font-size: 14px; display: block; text-align: right; margin-top: 15px; } 
+.forgot-link:hover { color: #1abc9c; text-decoration: underline; } 
+
+.signup-text, .login-text { text-align: center; margin-top: 30px; color: #888; font-size: 14px; } 
+.signup-text a, .login-text a { color: #1dd1a1; text-decoration: none; font-weight: 600; } 
+
+/* Alerts */ 
+.alert { border-radius: 4px; border: none; font-size: 14px; } 
+.alert-danger { background-color: rgba(255, 68, 68, 0.1); color: #ff4444; border: 1px solid rgba(255, 68, 68, 0.2); } 
+.alert-success { background-color: rgba(29, 209, 161, 0.1); color: #1dd1a1; border: 1px solid rgba(29, 209, 161, 0.2); } 
+
+/* Footer */ 
+footer { 
+    background-color: #000; 
+    padding: 30px 0; 
+    text-align: center; 
+    border-top: 1px solid #222; 
+    margin-top: auto; 
+    position: relative;
+    z-index: 20; 
+} 
+footer p { color: #666; margin: 0; font-size: 14px; } 
+
+/* Fix Chrome Autofill White Background */ 
+input:-webkit-autofill, 
+input:-webkit-autofill:hover,  
+input:-webkit-autofill:focus,  
+input:-webkit-autofill:active { 
+    -webkit-box-shadow: 0 0 0 1000px #000 inset !important; 
+    -webkit-text-fill-color: white !important; 
+    transition: background-color 5000s ease-in-out 0s; 
+}

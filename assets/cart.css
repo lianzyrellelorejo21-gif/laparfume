@@ -1,0 +1,47 @@
+/* Specific Cart Styles to match the Dark Theme */
+        .cart-container {
+            background-color: #161616;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px #222;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Floating animation */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .table-dark-custom {
+            background-color: transparent;
+            color: #fff;
+        }
+        .table-dark-custom th {
+            background-color: rgba(255,255,255,0.05);
+            border-bottom: 2px solid #333;
+            color: #1dd1a1;
+            font-weight: 600;
+        }
+        .table-dark-custom td {
+            background-color: transparent;
+            border-bottom: 1px solid #333;
+            vertical-align: middle;
+        }
+        
+        .qty-input {
+            background: #000;
+            border: 1px solid #333;
+            color: #fff;
+            width: 60px;
+            text-align: center;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        .qty-input:focus {
+            outline: none;
+            border-color: #1dd1a1;
+        }
+
+        .summary-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #333;
+        }

@@ -2,10 +2,10 @@
 // config/database.php
 // Database Configuration for LaParfume
 
-define('DB_HOST', 'fdb1032.awardspace.net');
-define('DB_NAME', '4715216_laparfume');
-define('DB_USER', '4715216_laparfume');
-define('DB_PASS', '(P:ajr@M1cx:%Gc3');
+define('DB_HOST', 'trolley.proxy.rlwy.net');
+define('DB_NAME', 'railway');
+define('DB_USER', 'railway');
+define('DB_PASS', 'MWQqxGxtsltcCjGnSAyYYzYhlOdzaweL');
 define('DB_CHARSET', 'utf8mb4');
 
 // Create PDO connection

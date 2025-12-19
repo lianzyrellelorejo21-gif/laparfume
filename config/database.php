@@ -2,11 +2,12 @@
 // config/database.php
 // Database Configuration for LaParfume
 
-define('DB_HOST', 'trolley.proxy.rlwy.net');
-define('DB_NAME', 'railway');
-define('DB_USER', 'railway');
-define('DB_PASS', 'MWQqxGxtsltcCjGnSAyYYzYhlOdzaweL');
-define('DB_CHARSET', 'utf8mb4');
+$DB_HOST = getenv('MYSQL_HOST');
+$DB_PORT = getenv('MYSQL_PORT');
+$DB_NAME = getenv('MYSQL_DATABASE');
+$DB_USER = getenv('MYSQL_USER');
+$DB_PASS = getenv('MYSQL_PASSWORD');
+$DB_CHARSET = 'utf8mb4';
 
 // Create PDO connection
 try {
